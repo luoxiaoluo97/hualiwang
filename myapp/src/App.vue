@@ -1,23 +1,22 @@
 <template>
-  <div>
+  <div class="container">
     <main>
       <router-view />
     </main>
-
-    <el-menu :defaule-active="activeIndex" mode="horizontal" router>
-      <el-menu-item :index="item.path" v-for="item in menu" :key="item.id">
-        <div class="xl">
-          <i :class="item.icon"></i>
-          <span slot="title">{{item.text}}</span>
-        </div>
-      </el-menu-item>
-    </el-menu>
+    <el-col>
+      <el-menu :defaule-active="activeIndex" mode="horizontal" router>
+        <el-menu-item :index="item.path" v-for="item in menu" :key="item.id">
+          <div class="xl">
+            <i :class="item.icon"></i>
+            <span slot="title">{{item.text}}</span>
+          </div>
+        </el-menu-item>
+      </el-menu>
+    </el-col>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: "app",
   data() {
@@ -79,25 +78,25 @@ export default {
     };
   },
   methods: {
-    goto(path) {
-      this.$router.push(path);
+    goto(name) {
+      this.$router.push({ name });
       // console.log(name)
     }
   },
   created() {
     console.log(this.$route);
-    this.activeIndex = this.$route.name;
+    // this.activeIndex = this.$route.name;
   }
-}
+};
+
+
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.xl {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 </style>
