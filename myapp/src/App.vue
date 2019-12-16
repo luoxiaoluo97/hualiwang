@@ -1,19 +1,18 @@
 <template>
-  <div>
-    <router-view />
-    <el-menu
-      mode="horizontal"
-      class="el-menu-vertical-demo"
-      :defaule-active="activeIndex"
-      @select="goto"
-    >
-      <el-menu-item :index="item.name" v-for="item in menu" :key="item.name">
-        <div class="xl">
-          <i :class="item.icon"></i>
-          <span slot="title">{{item.text}}</span>
-        </div>
-      </el-menu-item>
-    </el-menu>
+  <div class="container">
+    <main>
+      <router-view />
+    </main>
+    <el-col>
+      <el-menu :defaule-active="activeIndex" mode="horizontal" router>
+        <el-menu-item :index="item.path" v-for="item in menu" :key="item.id">
+          <div class="xl">
+            <i :class="item.icon"></i>
+            <span slot="title">{{item.text}}</span>
+          </div>
+        </el-menu-item>
+      </el-menu>
+    </el-col>
   </div>
 </template>
 
@@ -90,40 +89,7 @@ export default {
   }
 };
 
-// <ul>
-//       <li v-for="item in menu" :key="item.name">
-//         <!-- exact-active-class 精确匹配到路由 -->
-//         <router-link :to="item.path" exact-active-class="active">{{item.text}}</router-link>
-//       </li>
-//     </ul>
 
-// <div id="app">
-//     <router-view />
-//     <el-menu
-//       default-active="2"
-//       class="el-menu-vertical-demo"
-//       @open="handleOpen"
-//       @close="handleClose"
-//     >
-//       <el-menu-item index="1">
-//         <i class="el-icon-menu"></i>
-//         <span slot="title">导航一</span>
-//       </el-menu-item>
-
-//       <el-menu-item index="2">
-//         <i class="el-icon-menu"></i>
-//         <span slot="title">导航二</span>
-//       </el-menu-item>
-//       <el-menu-item index="3">
-//         <i class="el-icon-document"></i>
-//         <span slot="title">导航三</span>
-//       </el-menu-item>
-//       <el-menu-item index="4">
-//         <i class="el-icon-setting"></i>
-//         <span slot="title">导航四</span>
-//       </el-menu-item>
-//     </el-menu>
-// </div>
 </script>
 
 <style scoped>
