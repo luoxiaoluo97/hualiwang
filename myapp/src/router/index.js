@@ -6,37 +6,38 @@ import VueRouter from "vue-router";
 // 使用vue-router 
 Vue.use(VueRouter);
 
-import Home from "../pages/Home.vue";// 主页
-import Reg from "../pages/Reg.vue"; // 登录
-import Login from "../pages/Login.vue";// 登录
-import Classify from "../pages/Classify.vue"; // 分类
-import Cart from "../pages/Cart.vue";// 购物车
-import Mine from "../pages/Mine.vue";// 我的
-import Phone from "../pages/Phone.vue";//电话
-import Notfound from "../pages/Notfound.vue"// 404页面
+
+const Home = () => import("../pages/Home.vue");// 主页
+const Reg = () => import("../pages/Reg.vue"); // 登录
+const Login = () => import("../pages/Login.vue");// 登录
+const Classify = () => import("../pages/Classify.vue"); // 分类
+const Cart = () => import("../pages/Cart.vue");// 购物车
+const Mine = () => import("../pages/Mine.vue");// 我的
+const Phone = () => import("../pages/Phone.vue");//电话
+const Notfound = () => import("../pages/Notfound.vue")  // 404页面
 
 // 实例化VueRouter 并配置参数
 
 const router = new VueRouter({
     routes: [
         {
-            name:"home",
+            name: "home",
             path: "/home",
             component: Home
         }, {
-            name:"reg",
+            name: "reg",
             path: "/reg",
             component: Reg
         }, {
-            name:"login",
+            name: "login",
             path: "/login",
             component: Login
         }, {
-            name:"classify",
+            name: "classify",
             path: "/classify",
             component: Classify
         }, {
-            name:"cart",
+            name: "cart",
             path: "/cart",
             component: Cart
         }, {

@@ -1,21 +1,19 @@
 <template>
-  <div class="container">
-    <main>
-      <router-view />
-    </main>
-    <el-col>
-      <el-menu :defaule-active="activeIndex" mode="horizontal" router>
-        <el-menu-item :index="item.path" v-for="item in menu" :key="item.id">
-          <div class="xl">
-            <i :class="item.icon"></i>
-            <span slot="title">{{item.text}}</span>
-          </div>
-        </el-menu-item>
-      </el-menu>
-    </el-col>
+  <div>
+    <router-view />
+
+    <van-tabbar route active-color="pink">
+      <van-tabbar-item
+        v-for="item in menu"
+        :key="item.id"
+        :to="item.path"
+        :icon="item.icon"
+        replace
+      >{{item.text}}</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
-
+ 
 <script>
 export default {
   name: "app",
@@ -29,35 +27,35 @@ export default {
           name: "home",
           path: "/home",
           text: "首页",
-          icon: "el-icon-house"
+          icon: "home-o"
         },
         {
           id: 2,
           name: "classify",
           path: "/classify",
           text: "分类",
-          icon: "el-icon-s-operation"
+          icon: "apps-o"
         },
         {
           id: 3,
           name: "phone",
           path: "/phone",
           text: "电话",
-          icon: "el-icon-phone-outline"
+          icon: "phone-o"
         },
         {
           id: 4,
           name: "cart",
           path: "/cart",
           text: "购物车",
-          icon: "el-icon-shopping-cart-1"
+          icon: "shopping-cart-o"
         },
         {
           id: 5,
           name: "mine",
           path: "/mine",
           text: "我的",
-          icon: "el-icon-s-custom"
+          icon: "manager-o"
         }
       ],
       //登录注册
@@ -88,8 +86,6 @@ export default {
     // this.activeIndex = this.$route.name;
   }
 };
-
-
 </script>
 
 <style scoped>
