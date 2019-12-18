@@ -6,7 +6,7 @@ import VueRouter from "vue-router";
 // 使用vue-router 
 Vue.use(VueRouter);
 
-
+// 路由
 const Home = () => import("../pages/Home.vue");// 主页
 const Reg = () => import("../pages/Reg.vue"); // 登录
 const Login = () => import("../pages/Login.vue");// 登录

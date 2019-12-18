@@ -40,7 +40,6 @@
     </div>
 
     <div class="list">
-
       <!-- 渲染页面 -->
       <div class="list_1">
         <div class="list_2">
@@ -51,6 +50,24 @@
           </dl>
         </div>
       </div>
+    </div>
+
+    <div class="send"> 
+      <!-- 标题 -->
+      <div class="send_1">
+        <span class="span_1">送花对象</span>
+        <span class="span_2">更多》</span>
+      </div>
+      <!-- 送花对象 -->
+      <div class="send_2">
+        <div class="list_2">
+          <!-- <img src="http://cdn.huaduocai.net/Storage/Shop/1/logo/9602835526844902.jpg" alt /> -->
+          <dl>
+            <dt>送恋人</dt>
+          </dl>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -104,7 +121,7 @@ export default {
 #home {
   width: vw(375);
   background: #f2f2f2;
- 
+
   .search {
     width: vw(375);
     height: vw(44);
@@ -186,6 +203,16 @@ export default {
           }
         }
       }
+    }
+  }
+  .send_ {
+    width: vw(375);
+      height: vw(170);
+       border: 1px solid red;
+    .send_1{
+      width: vw(375);
+      height: vw(38);
+      border: 1px solid red;
     }
   }
 }
